@@ -1,0 +1,187 @@
+
+:root {
+    --c1: #dac2ba;
+    --c2: #bb7b79;
+    --c3: #f1e7bc;
+    --c4: #D6CE93;
+    --c5: #b4b48f;
+    --c6: #b4b48fc0;
+  }
+
+* {
+    color: rgb(0, 0, 0);
+    font-family: Didot, serif;
+}
+
+body {
+    max-width: 1080px;
+    padding: 25px;
+    margin: 0 auto;
+}
+
+.box {
+    box-shadow: 0px 0px 15px rgb(180, 180, 180);
+    border-radius: 10px;
+}
+
+header {
+    padding: .2em;
+    background-color: var(--c2);
+    background-image: url("../data/img/Caravaggio_53.jpg");
+    background-size: cover;
+}
+
+header.box {
+    box-shadow: 0px 0px 20px 2px rgb(140, 140, 140);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 32pt;
+    border: 5px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+p {
+    line-height: 1.4;
+}
+
+li {
+    line-height: 1.4;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    overflow: hidden;
+    padding-left: 0px;
+    text-align: center;
+}
+nav li {
+    float: left;
+    list-style-type: none;
+    overflow: hidden;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 50%;
+    padding: 10px 10px;
+}
+
+nav li a {
+    text-decoration: none;
+    padding: 10px 10px;
+    border-width: thick;
+    border-color: black;
+}
+
+nav li a:hover {
+    color: var(--c5);
+}
+
+section {
+    font-size: 18px;
+}
+
+section a:hover {
+    color: var(--c3);
+}
+
+section.data {
+    background-color: var(--c6);
+    padding: 25px;
+    padding-top: 1px;
+    margin: 0px;
+}
+
+section.data p {
+    color: black;
+}
+
+section.data hr {
+    height: 2px;
+    background-color: gainsboro;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.intro {
+    background-color: var(--c3);
+    text-align: center;
+    clear: right;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.image-search {
+    display: flex;
+}
+
+.image_container{
+    padding-top: 10px;
+    padding-right: 10px;
+    display: flex;
+    position: static;
+    width: 62%;
+    height: 428px;
+}
+
+.search {
+    padding: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    width: 38%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.form-container {
+    background-color: var(--c6);
+    border-bottom: 10px;
+    padding: 10px;
+    padding-top: 15px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    height: 129px;
+}
+
+.bottom-box {
+    margin-bottom: 0;
+    height: 229px;
+}
+
+.form-item {
+    padding: 12px;
+}
+
+label {
+    font-weight: bold;
+}
+
+label.top-label {
+    font-size: 21px;
+}
+
+form select, input {
+    width: 40%;
+}
+
+button {
+    margin: 6px;
+    padding: 6px;
+}
+
+form select, input, button {
+    font-size: 18px;
+    border-radius: 5px;
+}

@@ -1,0 +1,104 @@
+<!---
+    The home page. 
+    This will be the first page people will see when they arrive at your website. 
+    The home page should fulfill Krug's design requirements for home pages
+    showcase the starting point for queries on the dataset. 
+    (Meaning: what's the initial form you'll present to your users? 
+    The form should gather data for what you perceive to be a "typical" query against your data.)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Famous Artists</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header class="box">
+        <h1> Famous Artists </h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" id="index"> Home </a></li>
+            <li><a href="data.html" id="data"> About Data </a></li>
+        </ul>
+    </nav>
+
+    <section class="home">
+        <div class="intro box">
+            <h2> Explore History's Greatest Artists! </h2>
+            <p> You can search 50 world-famous artists by genre, nationality, name, or year. </p>
+        </div>
+        <div class="image-search">
+            <div class="image_container">
+                <img class="box" src="../data/img/William_Turner_66.jpg" alt="Artwork by Michelangelo">
+            </div>
+            <div class="search">
+                <!-- artist name search -->
+                <div class="form-container box">
+                    <form action="" method="get" class="search-form-name">
+                        <label for="a_name" class="top-label">Search by artist name </label>
+                        <div class="form-item artist-name">
+                            <input type="text" name="a_name" placeholder="e.g. pablo (case-insensitive)" id="a_name" required>
+                        </div>
+                    </form>
+                    <button type="submit">Search</button>
+                </div>
+                <!-- filter search -->
+                <div class="form-container box bottom-box">
+                    <form name=form action="" method="get" class="search-form">
+                        <label class="top-label">Filter by criteria</label>
+                        <div class="form-item genre">
+                            <label for="genre">Genre</label>
+                            <select name="genre" id="genre">
+                                <option selected value>Select One</option>
+                                <option value="br">Baroque</option>
+                                <option value="im">Impressionism</option>
+                                <option value="su">Surrealism</option>
+                            </select>
+                        </div>
+
+                        <div class="form-item nationality">
+                            <label for="nation">Nationality</label>
+                            <select name="nation" id="nation">
+                                <option selected value>Select One</option>
+                                <option value="1">American</optison>
+                                <option value="2">Austrian</optison>
+                                <option value="3">Belarusian</optison>
+                                <option value="4">Belgian</optison>
+                                <option value="5">British</optison>
+                                <option value="6">Dutch</optison>
+                                <option value="7">Flemish</optison>
+                                <option value="8">French</optison>
+                                <option value="9">German</optison>
+                                <option value="10">Greek</optison>
+                                <option value="11">Italian</optison>
+                                <option value="12">Jewish</optison>
+                                <option value="13">Mexican</optison>
+                                <option value="14">Norwegian</optison>
+                                <option value="15">Russian</optison>
+                                <option value="16">Spanish</optison>
+                                <option value="17">Swiss</optison>
+                            </select>
+                        </div>
+
+                        <div class="form-item year">
+                            <label for="year">Year </label>
+                            <!-- <br> -->
+                            <input type="text" name="year" id="year">
+                        </div>
+                        <button type="submit">Search</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

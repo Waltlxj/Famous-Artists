@@ -1,0 +1,51 @@
+<!--
+    The results page.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Famous Artists - Results</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}" />
+    </head>
+    <body>
+        <header class="box" style="background-image: url({{ url_for('static', filename='img/Caravaggio.jpg') }})">
+            <h1> Famous Artists </h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('homePage') }}"> Home </a></li>
+                <li><a href="{{ url_for('aboutData') }}"> About Data </a></li>
+            </ul>
+        </nav>
+
+        <section class="results">
+            <div class="results-header">
+                {% if entries|length <= 1 %}
+                    <h3> Showing {{ entries|length }} result for "{{ query_note }}" </h3>
+                {% else %}
+                    <h3> Showing {{ entries|length }} results for "{{ query_note }}" </h3>
+                {% endif %}
+                <a href="{{ url_for('homePage') }}" class="back">Back to seach </a>
+            </div>
+
+            {% for artist in entries: %}
+            <div class="result-entry box">
+                <div class="result-entry-image-container">
+                    <a href="{{ url_for('static', filename='img/'+artist['name'].replace(' ', '_')+'.jpg') }}"><img src="{{ url_for('static', filename='img/'+artist['name'].replace(' ', '_')+'.jpg') }}" alt="Artwork by {{ artist['name'] }}"></a>
+                </div>
+                <div class="result-entry-info">
+                    <h3>{{ artist['name'] }}</h3>
+                    <p> {{ artist['nation'] }}. {{ artist['born'] }} – {{ artist['die'] }}. {{ artist['genres'] }}. </p>
+                    <p> {{ artist['bio'] }}</p>
+                    <a href="{{ artist['wiki'] }}" target="blank">Wikipedia </a>
+                </div>
+            </div>
+            {% endfor %}
+
+
+        </section>
+    </body>
+</html>

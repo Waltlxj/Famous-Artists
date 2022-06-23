@@ -1,0 +1,92 @@
+<!---
+    The home page. 
+    This will be the first page people will see when they arrive at your website. 
+    The home page should fulfill Krug's design requirements for home pages
+    showcase the starting point for queries on the dataset. 
+    (Meaning: what's the initial form you'll present to your users? 
+    The form should gather data for what you perceive to be a "typical" query against your data.)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Famous Artists</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}" />
+    <!-- <script src="{{ url_for('static', filename='script.js') }}"></script> -->
+</head>
+
+<body>
+    <header class="box" style="background-image: url({{ url_for('static', filename='img/Caravaggio.jpg') }})">
+        <h1> Famous Artists </h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('homePage') }}" id="page-indicator"> Home </a></li>
+            <li><a href="{{ url_for('aboutData') }}"> About Data </a></li>
+        </ul>
+    </nav>
+
+    <section class="home">
+        <div class="intro box">
+            <h2> Explore History's Greatest Artists. </h2>
+            <p> You can search 50 world-famous artists by genre, nationality, name, or year. </p>
+        </div>
+        <div class="image-search">
+            <div class="image_container">
+                <abbr title="Artwork by William Turner">
+                <img class="box" src="{{ url_for('static', filename='img/William_Turner.jpg') }}" alt="Artwork by William Turner">
+                </abbr>
+            </div>
+            <div class="search">
+                <!-- search by name -->
+                <div class="form-container box">
+                    <form name=form action="/results" method="post" class="search-form-name">
+                        <label for="a_name" class="top-label">Search by artist name </label>
+                        <div class="form-item artist-name">
+                            <input type="text" name="a_name" id="a_name" placeholder="Case-insensitive" required>
+                        </div>
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+
+                <!-- filters -->
+                <div class="form-container box bottom-box">
+                    <form name=form action="/results" method="post" class="search-form">
+                        <label class="top-label">Filter by criteria</label>
+                        <div class="form-item genre">
+                            <label for="genre">Genre</label>
+                            <select name="genre" id="genre">
+                                <option selected value="null">Select all</option>
+                                {% for g in genres: %} 
+                                <option value= "{{ g }}" >{{ g }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="form-item nationality">
+                            <label for="nation">Nationality</label>
+                            <select name="nation" id="nation">
+                                <option selected value="null">Select all</option>
+                                {% for n in nationalities: %} 
+                                <option value= "{{ n }}" >{{ n }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="form-item year">
+                            <label for="year">Year </label>
+                            <input type="number" name="year" id="year" placeholder="1266-1989">
+                        </div>
+                        <button type="submit">Search</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
