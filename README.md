@@ -9,4 +9,4 @@ This is a full-stack web development project using plain HMTL/CSS/Javascript, Fl
 
 ## How to run
 - Run the program locally by typing 'python3 webapp.py localhost [port]'.
-- To run locally, must have psycopg2, Flask installed locally. Must also set-up the database and changes the variables in `backend` folder.
+- To run locally, must have psycopg2, Flask installed locally. Must also set up the database (see `database/`) and changes the variables in `backend/`.
