@@ -1,5 +1,4 @@
 import psycopg2
-import psqlConfig as config
 
 def detuple(ls):
     '''
@@ -47,9 +46,9 @@ class DataSource:
 
         Note: exits if a connection cannot be established.
         '''
+        DATABASE_URL = os.environ['DATABASE_URL']
         try:
-            connection = psycopg2.connect(
-                database=config.database, user=config.user, password=config.password, host="localhost")
+            connection = psycopg2.connect(DATABASE_URL, sslmode='require')
             print("connection succeeded.")
         except Exception as e:
             print("Connection error: ", e)
